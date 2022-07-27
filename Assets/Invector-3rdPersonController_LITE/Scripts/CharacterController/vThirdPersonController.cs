@@ -124,5 +124,11 @@ namespace Invector.vCharacterController
             else
                 animator.CrossFadeInFixedTime("JumpMove", .2f);
         }
+
+        public virtual void Dodge()
+        {
+            Debug.Log("Roll");
+            animator.CrossFadeInFixedTime("SwordRoll", .5f);
+        }
     }
 }

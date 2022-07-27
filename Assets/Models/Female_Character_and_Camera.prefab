@@ -5786,7 +5786,7 @@ Animator:
   m_GameObject: {fileID: 4316044541769724606}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d4bc8aeee1248da43a4176631929bc9d, type: 3}
-  m_Controller: {fileID: 9100000, guid: cbd1db45c75e5b948a5befe9ecb80421, type: 2}
+  m_Controller: {fileID: 9100000, guid: 941f32b65c29fed4482ac84b3fd540f5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5808,7 +5808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fbf3aa05f6be24780438449f505aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useRootMotion: 0
+  useRootMotion: 1
   rotateByWorld: 0
   useContinuousSprint: 1
   sprintOnlyFree: 1
@@ -5862,11 +5862,15 @@ MonoBehaviour:
   jumpInput: 32
   strafeInput: 9
   sprintInput: 304
+  lockInput: 9
+  dodgeInput: 306
   rotateCameraXInput: Mouse X
   rotateCameraYInput: Mouse Y
   cc: {fileID: 0}
   tpCamera: {fileID: 0}
   cameraMain: {fileID: 0}
+  bossTransform: {fileID: 0}
+  locked: 0
 --- !u!54 &4316044541769724604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7809,7 +7813,7 @@ Transform:
   - {fileID: 2590839589151883833}
   - {fileID: 4316044541769724600}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &472856376661008917
 PrefabInstance:

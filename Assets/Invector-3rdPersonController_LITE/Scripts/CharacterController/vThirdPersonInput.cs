@@ -13,6 +13,7 @@ namespace Invector.vCharacterController
         public KeyCode strafeInput = KeyCode.Tab;
         public KeyCode sprintInput = KeyCode.LeftShift;
         public KeyCode lockInput = KeyCode.Tab;
+        public KeyCode dodgeInput = KeyCode.LeftControl;
 
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
@@ -83,6 +84,7 @@ namespace Invector.vCharacterController
             SprintInput();
             JumpInput();
             StrafeInput();
+            DodgeInput();
         }
 
         public virtual void MoveInput()
@@ -162,6 +164,13 @@ namespace Invector.vCharacterController
         {
             if (Input.GetKeyDown(jumpInput) && JumpConditions())
                 cc.Jump();
+        }
+
+        protected virtual void DodgeInput()
+        {
+            Debug.Log("Roll");
+            if (Input.GetKeyDown(dodgeInput) && cc.isGrounded)
+                cc.Dodge();
         }
 
         #endregion       
