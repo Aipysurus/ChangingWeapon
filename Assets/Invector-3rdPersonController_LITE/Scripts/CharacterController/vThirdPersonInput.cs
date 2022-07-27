@@ -12,6 +12,7 @@ namespace Invector.vCharacterController
         public KeyCode jumpInput = KeyCode.Space;
         public KeyCode strafeInput = KeyCode.Tab;
         public KeyCode sprintInput = KeyCode.LeftShift;
+        public KeyCode lockInput = KeyCode.Tab;
 
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
@@ -21,12 +22,16 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
 
+        //Boss Transform
+        public Transform bossTransform;
+        public bool locked = false;
         #endregion
 
         protected virtual void Start()
         {
             InitilizeController();
             InitializeTpCamera();
+            cc.Strafe();
         }
 
         protected virtual void FixedUpdate()
@@ -77,7 +82,6 @@ namespace Invector.vCharacterController
             MoveInput();
             CameraInput();
             SprintInput();
-            StrafeInput();
             JumpInput();
         }
 
@@ -85,6 +89,21 @@ namespace Invector.vCharacterController
         {
             cc.input.x = Input.GetAxis(horizontalInput);
             cc.input.z = Input.GetAxis(verticallInput);
+        }
+
+        public virtual void LockInput()
+        {
+            if (Input.GetKeyDown(lockInput))
+            {
+                if (!locked)
+                {
+                    tpCamera.SetTarget(bossTransform);
+                }
+                else
+                {
+                    tpCamera.SetTarget(null);
+                }
+            }
         }
 
         protected virtual void CameraInput()
