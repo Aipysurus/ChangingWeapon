@@ -10,16 +10,18 @@ public class BossAI : MonoBehaviour
     private float MinDist = 4.0f;
     [SerializeField]
     private float MoveSpeed = 3.0f;
+    private Action_Manage bossActions;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bossActions = gameObject.GetComponent<Action_Manage>();
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveToPlayer();
+        
     }
 
     private void MoveToPlayer()
@@ -28,8 +30,13 @@ public class BossAI : MonoBehaviour
         transform.LookAt(pTransform);
         if (Vector3.Distance(transform.position, pTransform.position) >= MinDist)
         {
-
+            bossActions.Pressed_walk();
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         }
+    }
+
+    private void randomActions()
+    {
+
     }
 }
