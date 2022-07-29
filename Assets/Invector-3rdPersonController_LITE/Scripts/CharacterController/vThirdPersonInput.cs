@@ -15,6 +15,9 @@ namespace Invector.vCharacterController
         public KeyCode lockInput = KeyCode.Tab;
         public KeyCode dodgeInput = KeyCode.LeftControl;
 
+        public KeyCode attackInput1 = KeyCode.Mouse0;
+        public KeyCode attackInput2 = KeyCode.Mouse1;
+
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
         public string rotateCameraYInput = "Mouse Y";
@@ -22,6 +25,7 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonController cc;
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
+
 
         //Boss Transform
         public Transform bossTransform;
@@ -85,6 +89,7 @@ namespace Invector.vCharacterController
             JumpInput();
             StrafeInput();
             DodgeInput();
+            AttackInput();
         }
 
         public virtual void MoveInput()
@@ -168,9 +173,17 @@ namespace Invector.vCharacterController
 
         protected virtual void DodgeInput()
         {
-            Debug.Log("Roll");
+
             if (Input.GetKeyDown(dodgeInput) && cc.isGrounded)
                 cc.Dodge();
+        }
+
+        protected virtual void AttackInput()
+        {
+            if (Input.GetKeyDown(attackInput1) && cc.isGrounded)
+            {
+                cc.Attack();
+            }
         }
 
         #endregion       

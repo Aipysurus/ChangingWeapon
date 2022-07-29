@@ -127,8 +127,21 @@ namespace Invector.vCharacterController
 
         public virtual void Dodge()
         {
-            Debug.Log("Roll");
-            animator.CrossFadeInFixedTime("SwordRoll", .5f);
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("SwordRoll"))
+            {
+                return;
+            }
+            animator.CrossFadeInFixedTime("SwordRoll", 0.1f);
+        }
+
+        public virtual void Attack()
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1"))
+            {
+                return;
+            }
+            animator.CrossFadeInFixedTime("Sword Attack 1", 0.1f);
+
         }
     }
 }

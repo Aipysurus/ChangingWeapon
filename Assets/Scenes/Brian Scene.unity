@@ -367,13 +367,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4316044541769724601, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 941f32b65c29fed4482ac84b3fd540f5, type: 2}
-    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
-      propertyPath: useRootMotion
-      value: 1
+    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: attackInput1
+      value: 323
       objectReference: {fileID: 0}
     - target: {fileID: 6683908790431341720, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
       propertyPath: m_Name
