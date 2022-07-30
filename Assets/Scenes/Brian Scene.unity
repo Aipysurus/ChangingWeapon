@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &137613946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3639946560462172248, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+  m_PrefabInstance: {fileID: 472856376817874558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369356961
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +222,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &477947614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7231336139986350166, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+  m_PrefabInstance: {fileID: 472856376817874558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &791788216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8975838541986528165, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+  m_PrefabInstance: {fileID: 472856376817874558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1448161406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7400579843601180200, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+  m_PrefabInstance: {fileID: 472856376817874558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546311270
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +335,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642543333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7263755826094915487, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+  m_PrefabInstance: {fileID: 472856376817874558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &472856376817874558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,21 +392,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
-      propertyPath: attackDelay
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: spear1
+      value: 
+      objectReference: {fileID: 1448161406}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: spear2
+      value: 
+      objectReference: {fileID: 1642543333}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: broadsword1
+      value: 
+      objectReference: {fileID: 477947614}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: broadsword2
+      value: 
+      objectReference: {fileID: 477947614}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: greatsword1
+      value: 
+      objectReference: {fileID: 791788216}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: greatsword2
+      value: 
+      objectReference: {fileID: 137613946}
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: useRootMotion
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
-      propertyPath: attackInput1
-      value: 323
+    - target: {fileID: 4316044541769724602, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: locomotionType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
-      propertyPath: attackWindow
-      value: 0.4
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: bossTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316044541769724604, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 6683908790431341720, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
       propertyPath: m_Name
       value: Female_Character_and_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231336139986350166, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -29,6 +29,10 @@ namespace Invector.vCharacterController
         public float attackWindow = 0.4f;
         private float attackDelay = 0f;
 
+        private bool canMove = true;
+
+
+
 
         //Boss Transform
         public Transform bossTransform;
@@ -86,13 +90,25 @@ namespace Invector.vCharacterController
 
         protected virtual void InputHandle()
         {
-            MoveInput();
+            if (canMove) { 
+                MoveInput();    
+            }
+            else
+            {
+                StopMoving();
+            }
             CameraInput();
             SprintInput();
             JumpInput();
             StrafeInput();
             DodgeInput();
             AttackInput();
+        }
+
+        public virtual void StopMoving()
+        {
+            cc.input.x = 0f;
+            cc.input.z = 0f;
         }
 
         public virtual void MoveInput()
@@ -194,14 +210,26 @@ namespace Invector.vCharacterController
             //Case for start attacking
             if (Input.GetKeyDown(attackInput1) && cc.isGrounded && attackDelay <= 0)
             {
-                cc.Attack();
+                canMove = false;
+                cc.Attack("Left");
                 attackDelay = attackWindow;
 
+            }
+            else if (Input.GetKeyDown(attackInput2) && cc.isGrounded && attackDelay <= 0)
+            {
+                canMove = false;
+                cc.Attack("Right");
+                attackDelay = attackWindow;
             }
             //Case for combo delay
             else
             {
                 attackDelay -= Time.deltaTime;
+                if (attackDelay <= 0)
+                {
+                    canMove = true;
+                    cc.DisableWeapons();
+                }
             }
 
         }

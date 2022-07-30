@@ -1,11 +1,25 @@
 ﻿using UnityEngine;
 
 namespace Invector.vCharacterController
+
+
+
 {
     public class vThirdPersonController : vThirdPersonAnimator
     {
+
+        public GameObject broadsword1;
+        public GameObject broadsword2;
+        public GameObject greatsword1;
+        public GameObject spear1;
+        public GameObject spear2;
+        public GameObject weapon1;
+        public GameObject weapon2;
+
         public virtual void ControlAnimatorRootMotion()
         {
+
+
             if (!this.enabled) return;
 
             if (inputSmooth == Vector3.zero)
@@ -135,15 +149,19 @@ namespace Invector.vCharacterController
             animator.CrossFadeInFixedTime("SwordRoll", 0.1f);
         }
 
-        public virtual void Attack()
+        public virtual void Attack(string input)
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1"))
+            //Sword Combo
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1") && input.Equals("Left"))
             {
+                broadsword1.SetActive(true);
                 animator.CrossFadeInFixedTime("Sword Attack 2", 0.1f);
                 return;
             }
-            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 2"))
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 2") && input.Equals("Left"))
             {
+                broadsword1.SetActive(false);
+                broadsword2.SetActive(true);
                 animator.CrossFadeInFixedTime("Sword Attack 3", 0.1f);
                 return;
             }
@@ -152,8 +170,46 @@ namespace Invector.vCharacterController
                 return;
             }
 
+            //Spear combo
+            else if(animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1") && input.Equals("Right"))
+            {
+                spear1.SetActive(true);
+                animator.CrossFadeInFixedTime("Spear Attack 2", 0.1f);
+                return;
+            }
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Spear Attack 2") && input.Equals("Right"))
+            {
+                spear1.SetActive(false);
+                spear2.SetActive(true);
+                animator.CrossFadeInFixedTime("Spear Attack 3", 0.1f);
+                return;
+            }
+
+            //Greatsword combo
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 2") && input.Equals("Right"))
+            {
+                broadsword1.SetActive(false);
+                greatsword1.SetActive(true);
+                animator.CrossFadeInFixedTime("Greatsword Attack 3", 0.1f);
+                return;
+            }
+
+
+
             animator.CrossFadeInFixedTime("Sword Attack 1", 0.1f);
 
         }
+
+        public virtual void DisableWeapons()
+        {
+            broadsword1.SetActive(false);
+            broadsword2.SetActive(false);
+            greatsword1.SetActive(false);
+            spear1.SetActive(false);
+            spear2.SetActive(false);
+            //weapon1.SetActive(false);
+            //weapon2.SetActive(false);
+
+    }
     }
 }
