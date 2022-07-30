@@ -368,8 +368,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: attackDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
       propertyPath: attackInput1
       value: 323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316044541769724603, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
+      propertyPath: attackWindow
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6683908790431341720, guid: 3b0f87abc6a8abd4f9ac363b15424ac7, type: 3}
       propertyPath: m_Name

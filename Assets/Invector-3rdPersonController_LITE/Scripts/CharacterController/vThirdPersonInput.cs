@@ -26,6 +26,9 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
 
+        public float attackWindow = 0.4f;
+        private float attackDelay = 0f;
+
 
         //Boss Transform
         public Transform bossTransform;
@@ -171,6 +174,10 @@ namespace Invector.vCharacterController
                 cc.Jump();
         }
 
+
+        /// <summary>
+        /// Input to trigger the Dodge 
+        /// </summary>
         protected virtual void DodgeInput()
         {
 
@@ -178,12 +185,25 @@ namespace Invector.vCharacterController
                 cc.Dodge();
         }
 
+
+        /// <summary>
+        /// Input to trigger the Attacks 
+        /// </summary>
         protected virtual void AttackInput()
         {
-            if (Input.GetKeyDown(attackInput1) && cc.isGrounded)
+            //Case for start attacking
+            if (Input.GetKeyDown(attackInput1) && cc.isGrounded && attackDelay <= 0)
             {
                 cc.Attack();
+                attackDelay = attackWindow;
+
             }
+            //Case for combo delay
+            else
+            {
+                attackDelay -= Time.deltaTime;
+            }
+
         }
 
         #endregion       

@@ -127,7 +127,8 @@ namespace Invector.vCharacterController
 
         public virtual void Dodge()
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("SwordRoll"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("SwordRoll") || animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1")
+                || (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 2")) || (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 3")))
             {
                 return;
             }
@@ -138,8 +139,19 @@ namespace Invector.vCharacterController
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 1"))
             {
+                animator.CrossFadeInFixedTime("Sword Attack 2", 0.1f);
                 return;
             }
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 2"))
+            {
+                animator.CrossFadeInFixedTime("Sword Attack 3", 0.1f);
+                return;
+            }
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Sword Attack 3") || animator.GetCurrentAnimatorStateInfo(0).IsName("SwordRoll"))
+            {
+                return;
+            }
+
             animator.CrossFadeInFixedTime("Sword Attack 1", 0.1f);
 
         }
