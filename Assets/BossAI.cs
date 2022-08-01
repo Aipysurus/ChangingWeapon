@@ -9,34 +9,53 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float MinDist = 4.0f;
     [SerializeField]
-    private float MoveSpeed = 3.0f;
-    private Action_Manage bossActions;
+    private float MoveSpeed = 4.0f;
+    public Action_Manage bossActions;
+    private bool animationCD = false;
+    public float cdTime = 4.0f;
+    Transform pTransform;
     // Start is called before the first frame update
     void Start()
     {
         bossActions = gameObject.GetComponent<Action_Manage>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveToPlayer();
-        
+        Debug.Log(Vector3.Distance(transform.position, Player.transform.position));
+        if (!animationCD)
+        {
+            animationCD = true;
+            if (Vector3.Distance(transform.position, Player.transform.position) >= MinDist)
+            {
+                bossActions.Pressed_run();
+                MoveToPlayer();
+            }
+            else
+            {
+                Debug.Log("Not Moving");
+            }
+            StartCoroutine(changeMode());
+        }
     }
 
     private void MoveToPlayer()
     {
-        Transform pTransform = Player.transform;
-        transform.LookAt(pTransform);
-        if (Vector3.Distance(transform.position, pTransform.position) >= MinDist)
-        {
-            bossActions.Pressed_walk();
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-        }
+        transform.LookAt(Player.transform);
+        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        
     }
 
     private void randomActions()
     {
 
+    }
+
+    IEnumerator changeMode()
+    {
+        yield return new WaitForSeconds(cdTime);
+        animationCD = false;
     }
 }
