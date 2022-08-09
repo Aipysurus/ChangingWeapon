@@ -33,6 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 1581605886}
   - {fileID: 400013005}
+  - {fileID: 1260440844}
   m_Father: {fileID: 2864889092144330320}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,7 +190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400013005}
   - component: {fileID: 400013007}
-  - component: {fileID: 400013006}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -216,7 +216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188.55707, y: 209.9}
+  m_AnchoredPosition: {x: -190.9, y: 213.5}
   m_SizeDelta: {x: 463.6859, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400013007
@@ -270,24 +270,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &400013006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400013004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b204524b56d88d64fb11cc9ae4cea052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthSlider: {fileID: 400013007}
-  RegenSlider: {fileID: 1581605888}
-  MaxHealth: 100
-  RegenMaxHealth: 100
-  CurrentHealth: 0
-  RegenTimer: 1
 --- !u!1 &722019305
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +413,86 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1260440843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260440844}
+  - component: {fileID: 1260440846}
+  - component: {fileID: 1260440845}
+  m_Layer: 5
+  m_Name: PotionCounterDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1260440844
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260440843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 89168444}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -337.4, y: 186}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1260440846
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260440843}
+  m_CullTransparentMesh: 1
+--- !u!114 &1260440845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260440843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9811321, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Potion Counter Here
 --- !u!1 &1581605885
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188.55707, y: 209.9}
+  m_AnchoredPosition: {x: -190.9, y: 213.5}
   m_SizeDelta: {x: 463.6859, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581605888
@@ -6572,6 +6634,7 @@ GameObject:
   - component: {fileID: 4316044541769724603}
   - component: {fileID: 4316044541769724604}
   - component: {fileID: 4316044541769724605}
+  - component: {fileID: 349172791}
   m_Layer: 0
   m_Name: Female_Character_Prefab
   m_TagString: Player
@@ -6750,6 +6813,27 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!114 &349172791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316044541769724606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b204524b56d88d64fb11cc9ae4cea052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthSlider: {fileID: 400013007}
+  RegenSlider: {fileID: 1581605888}
+  PotionsCounterDisplay: {fileID: 1260440845}
+  MaxHealth: 100
+  RegenMaxHealth: 0
+  CurrentHealth: 0
+  RegenTimerMax: 1
+  PotionAmmount: 3
+  PotionHealing: 25
 --- !u!1 &4316044541805176284
 GameObject:
   m_ObjectHideFlags: 0
